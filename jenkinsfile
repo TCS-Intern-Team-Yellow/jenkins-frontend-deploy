@@ -1,0 +1,11 @@
+pipeline {
+	agent any
+	stages {
+		stage('Code fetch') {
+			steps {
+				sh 'git cloan https://github.com/TCS-Intern-Team-Yellow/Frontend-Angular.git'
+        sh 
+			}
+		}
+	}
+}
