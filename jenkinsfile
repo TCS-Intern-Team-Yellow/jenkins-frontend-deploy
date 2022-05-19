@@ -7,7 +7,7 @@ pipeline {
 				
 				sh """ssh -o StrictHostKeyChecking=no ec2-user@10.0.156.103 << EOF   
 				rm -rf Frontend-Angular/
-				git cloan -b 20220510 https://github.com/TCS-Intern-Team-Yellow/Frontend-Angular.git
+				git clone -b 20220510 https://github.com/TCS-Intern-Team-Yellow/Frontend-Angular.git
 				sudo systemctl reload nginx
 				sudo systemctl restart nginx
 				exit
