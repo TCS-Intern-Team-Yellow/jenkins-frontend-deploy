@@ -1,18 +1,22 @@
 pipeline {
 	agent any
 	stages {
-		stage('Code fetch') {
+		stage('connect to frontend') {
 			steps {
 				sshagent(['10.0.156.103']) {
 				
 				sh """ssh -o StrictHostKeyChecking=no ec2-user@10.0.156.103 << EOF   
+				echo 'start 1'
 				ls
 				rm -rf Frontend-Angular/
+				echo 'start 2'
 				ls
 				git clone -b 20220510 https://github.com/TCS-Intern-Team-Yellow/Frontend-Angular.git
+				echo 'start 3'
 				ls
 				sudo systemctl reload nginx
 				sudo systemctl restart nginx
+				echo 'done'
 				exit
 				EOF"""
 				    
